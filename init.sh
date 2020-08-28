@@ -21,6 +21,6 @@ echo -e "$(date) starting git2consul. found these env vars: \nCFG:$CFG\nIDPUB:$I
 
 while true
 do
-  /usr/bin/node /usr/lib/node_modules/git2consul $@ --config-file /etc/git2consul.d/config.json
+  /usr/local/bin/node /usr/local/lib/node_modules/git2consul $@ --config-file /etc/git2consul.d/config.json
 done
 
