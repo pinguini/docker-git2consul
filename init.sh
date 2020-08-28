@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 
 if [ -n "$CFG" ]
@@ -13,7 +13,8 @@ then
   mkdir ~/.ssh
   echo $ID   |base64 -d > ~/.ssh/id_rsa
   echo $IDPUB|base64 -d > ~/.ssh/id_rsa.pub
-  echo -e "StrictHostKeyChecking no\nUserKnownHostsFile=/dev/null" > ~/.ssh/config
+  echo "StrictHostKeyChecking no" > ~/.ssh/config
+  echo "UserKnownHostsFile=/dev/null" >> ~/.ssh/config
   chmod 700 -R ~/.ssh
 fi
 
