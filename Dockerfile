@@ -1,8 +1,7 @@
-FROM alpine:3.2
-MAINTAINER Calvin Leung Huang <https://github.com/cleung2010>
+FROM node:lts
+MAINTAINER Mokin Anton <https://github.com/pinguini>
 
-RUN apk --update add nodejs git openssh && \
-    rm -rf /var/cache/apk/* && \
+RUN apt-get update && apt-get install -y git openssh && apt-get clean autoclean && apt-get autoremove --yes && rm -rf /var/lib/{apt,lists,cache,log}/
     npm install git2consul@0.12.10 --global && \
     mkdir -p /etc/git2consul.d
 
